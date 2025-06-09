@@ -1,0 +1,208 @@
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #121212, #1e2a38);
+  color: #eee;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+  flex-wrap: wrap;
+  z-index: 10;
+}
+
+.content {
+  flex: 1;
+  min-width: 300px;
+  z-index: 10;
+  text-align: left;
+}
+
+/* Gradient animated text */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradientText {
+  background: linear-gradient(270deg, #00ffcc, #006666, #00ffcc);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  animation: gradientShift 4s ease infinite;
+}
+
+/* Heading */
+.heading {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Subheading */
+.subheading {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #a0cfdc;
+}
+
+/* Buttons container */
+.buttonsContainer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Button base */
+.button {
+  padding: 0.8rem 2.2rem;
+  background: #00ffcc;
+  color: #003333;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 40px;
+  box-shadow: 0 4px 20px rgba(0, 255, 204, 0.5);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  font-size: 1rem;
+  min-width: 140px;
+  text-align: center;
+}
+
+/* Secondary button style */
+.secondaryButton {
+  background: transparent;
+  color: #00ffcc;
+  border: 2px solid #00ffcc;
+  box-shadow: none;
+}
+
+.secondaryButton:hover {
+  background: #00ffcc;
+  color: #003333;
+}
+
+/* Image section */
+.imageArea {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileImage {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #00ffcc;
+  box-shadow: 0 0 30px rgba(0, 255, 204, 0.2);
+  transition: transform 0.4s ease;
+}
+
+.profileImage:hover {
+  transform: scale(1.05);
+}
+
+/* Decorative animated glowing blobs */
+.home::before {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #00ffcc66, transparent 70%);
+  border-radius: 50%;
+  top: 10%;
+  left: 5%;
+  filter: blur(100px);
+  z-index: 1;
+  animation: blobMove 8s ease-in-out infinite;
+}
+
+.home::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #00666666, transparent 70%);
+  border-radius: 50%;
+  bottom: 5%;
+  right: 10%;
+  filter: blur(120px);
+  z-index: 1;
+  animation: blobMoveReverse 10s ease-in-out infinite;
+}
+
+/* Blob animations */
+@keyframes blobMove {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, 20px);
+  }
+}
+
+@keyframes blobMoveReverse {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-20px, -20px);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 2.2rem;
+  }
+
+  .subheading {
+    font-size: 1rem;
+  }
+
+  .buttonsContainer {
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .profileImage {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 2rem;
+  }
+}

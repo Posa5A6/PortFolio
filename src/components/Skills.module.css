@@ -1,0 +1,119 @@
+.skills {
+  background: linear-gradient(135deg, #0e1b24, #121212);
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #00ffcc;
+  letter-spacing: 1.2px;
+}
+
+/* Row wrapper for scrolling effect */
+.rowWrapper {
+  overflow: hidden;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+/* Row for skill cards */
+.row {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+}
+
+/* Alternate scrolling animations */
+.row1 {
+  animation: scroll-left-right 30s linear infinite alternate;
+}
+
+.row2 {
+  animation: scroll-right-left 30s linear infinite alternate;
+}
+
+@keyframes scroll-left-right {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right-left {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Individual skill card */
+.skillCard {
+  background: #1a1a1a;
+  padding: 1.5rem 1rem;
+  border-radius: 14px;
+  width: 160px;
+  flex-shrink: 0;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+/* On hover: glow + scale */
+.skillCard:hover {
+  transform: scale(1.2);
+  color: #00ffff;
+  animation: thunderGlow 1s infinite alternate;
+  cursor: pointer;
+}
+
+/* Icon inside skill card */
+.icon {
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
+  color: #00f0ff;
+}
+
+/* Thunder glow effect */
+@keyframes thunderGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px 2px #00ffff, 0 0 30px 5px #00ffff;
+    filter: brightness(1.2);
+  }
+  50% {
+    box-shadow: 0 0 20px 5px #00ffff, 0 0 40px 10px #00ffff;
+    filter: brightness(1.5);
+  }
+}
+
+/* Pause animation on hover */
+.row1:hover,
+.row2:hover {
+  animation-play-state: paused;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .skillCard {
+    width: 120px;
+    padding: 1rem 0.5rem;
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+
+  .content h2 {
+    font-size: 2rem;
+  }
+}
