@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './Skills.module.css';
 import { motion } from 'framer-motion';
-import {
+/*import {
   FaReact, FaJava, FaNodeJs, FaPython, FaHtml5,
   FaCss3Alt, FaJs, FaGithub, FaCode, FaCloud,
   FaDatabase, FaTools
@@ -11,7 +11,7 @@ import {
   SiSpringboot, SiFlask, SiDjango, SiVercel,
   SiRender, SiNetlify
 } from 'react-icons/si';
-
+*/
 const Skills = () => {
   const skills = [
     { icon: <FaReact />, name: 'React.js' },
