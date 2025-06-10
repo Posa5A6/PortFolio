@@ -206,3 +206,58 @@
     margin-bottom: 2rem;
   }
 }
+.buttonsContainer {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  background: #00bfa6;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.secondaryButton {
+  background: transparent;
+  border: 2px solid #00bfa6;
+  color: #00bfa6;
+}
+
+@media (max-width: 768px) {
+  .buttonsContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .button {
+    width: 80%; /* Or 100% if you prefer full width */
+  }
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .imageArea {
+    margin-top: 2rem;
+  }
+}
