@@ -42,8 +42,8 @@ const Home = () => {
 
           <div className={styles.buttonsContainer}>
             <motion.a
-              href="/Narendra_Resume.pdf"
-              download="Narendra_Resume.pdf"
+              href="/Narendra_Posa.pdf"
+              download="Narendra_Posa.pdf"
               className={styles.button}
               whileHover={buttonHover}
               whileTap={{ scale: 0.95 }}
