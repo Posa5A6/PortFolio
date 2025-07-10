@@ -8,7 +8,7 @@ const projects = [
       'A cloud-based MERN stack system centralizing patient medical data across India to improve healthcare efficiency.',
     tech: 'MERN Stack, Cloud Computing',
     github: 'https://github.com/Posa5A6/PMDCS',
-    demo: '', // No live demo link
+    demo: '',
   },
   {
     name: 'Bike Rental Portal',
@@ -24,6 +24,13 @@ const projects = [
     tech: 'Java, JDBC',
     github: 'https://github.com/Posa5A6/Libraray-Management-System-using-java-and-jdbc',
     demo: '',
+  },
+  {
+    name: 'Book Share App',
+    description: 'A full-stack MERN web application where users can upload, search, and explore books.',
+    tech: 'React, Node.js, Express, MongoDB, Netlify, Render',
+    github: 'https://github.com/Posa5A6/book-share-app',
+    demo: 'https://book-share-app.netlify.app/',
   },
 ];
 
