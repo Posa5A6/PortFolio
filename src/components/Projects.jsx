@@ -32,6 +32,13 @@ const projects = [
     github: 'https://github.com/Posa5A6/book-share-app',
     demo: 'https://book-share-app.netlify.app/',
   },
+{
+  name: 'Campaign Voting System',
+  description: 'A full-stack web application that enables secure digital voting with OTP-based authentication, role-based access, and real-time campaign management.',
+  tech: 'Django, Python, HTML, CSS, JavaScript, MySQL, Render',
+  github: 'https://github.com/Posa5A6/Campaign_Voting_System',  // replace with your repo
+  demo: 'https://campaign-voting-system.onrender.com/',
+},
 ];
 
 const Projects = () => {
