@@ -4,70 +4,79 @@ import { motion } from 'framer-motion';
 import { FaUserGraduate, FaRocket, FaLightbulb } from 'react-icons/fa';
 
 const About = () => {
-  const cards = [
-    {
-      icon: <FaUserGraduate />,
-      title: "Education",
-      content: (
-        <>
-          <p><strong>B.Tech CSE</strong><br />AITS Rajampet<br />2021–2025 | 87%</p>
-          <p><strong>Intermediate</strong><br />JCNRM<br />94.3%</p>
-          <p><strong>SSC</strong><br />SRK EM School<br />10 CGPA</p>
-        </>
-      )
-    },
-    {
-      icon: <FaLightbulb />,
-      title: "What Drives Me",
-      content: (
-        <p>
-          I love turning ideas into real-world applications. I enjoy coding,
-          problem-solving, and building clean, efficient, user-friendly systems.
-        </p>
-      )
-    },
-    {
-      icon: <FaRocket />,
-      title: "My Goal",
-      content: (
-        <p>
-          To grow as a full stack developer and contribute to impactful,
-          scalable applications while constantly learning new technologies.
-        </p>
-      )
-    }
-  ];
-
   return (
     <section id="about" className={styles.about}>
-      <motion.div
-        className={styles.content}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <h2>About Me</h2>
+      <div className={styles.container}>
 
-        <p className={styles.intro}>
-          Hello! I'm <strong>Narendra Posa</strong>, a passionate full stack developer
-          focused on building modern and impactful digital experiences.
-        </p>
+        {/* LEFT SIDE */}
+        <motion.div
+          className={styles.left}
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2>About Me</h2>
 
-        <div className={styles.cardContainer}>
-          {cards.map((item, index) => (
-            <motion.div
-              key={index}
-              className={styles.card}
-              whileHover={{ scale: 1.1 }}
-            >
-              <div className={styles.icon}>{item.icon}</div>
-              <h3>{item.title}</h3>
-              <div className={styles.cardContent}>{item.content}</div>
-            </motion.div>
-          ))}
+          <p className={styles.intro}>
+            Hello! I'm <strong>Narendra Posa</strong>, a passionate full stack developer
+            who loves building modern, scalable, and user-friendly applications.
+          </p>
+
+          <div className={styles.highlights}>
+            <div>
+              <h3>🎓 4+ Years</h3>
+              <p>Learning & Building</p>
+            </div>
+            <div>
+              <h3>💻 Full Stack</h3>
+              <p>React • Node • Java</p>
+            </div>
+            <div>
+              <h3>🚀 Projects</h3>
+              <p>Real-world applications</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* RIGHT SIDE */}
+        <div className={styles.right}>
+
+          <motion.div
+            className={styles.card}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <FaUserGraduate className={styles.icon} />
+            <h3>Education</h3>
+            <p>B.Tech CSE – AITS Rajampet</p>
+            <span>2021–2025 | 87%</span>
+          </motion.div>
+
+          <motion.div
+            className={styles.card}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            <FaLightbulb className={styles.icon} />
+            <h3>What Drives Me</h3>
+            <p>I enjoy solving problems and turning ideas into real applications.</p>
+          </motion.div>
+
+          <motion.div
+            className={styles.card}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            <FaRocket className={styles.icon} />
+            <h3>My Goal</h3>
+            <p>To become a top developer and build impactful scalable products.</p>
+          </motion.div>
+
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
