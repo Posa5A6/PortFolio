@@ -36,34 +36,43 @@ const About = () => {
           Hello! I'm <strong>Narendra Posa</strong>, a passionate full stack developer
           focused on building modern and impactful digital experiences.
         </p>
-          <div className={styles.highlights}>
-            <div>
+
+        {/* MAIN SPLIT */}
+        <div className={styles.wrapper}>
+
+          {/* LEFT SIDE (BIG STATS) */}
+          <div className={styles.left}>
+            <div className={styles.highlightCard}>
               <h3>🎓 4+ Years</h3>
               <p>Learning & Building</p>
             </div>
-            <div>
+
+            <div className={styles.highlightCard}>
               <h3>💻 Full Stack</h3>
               <p>React • Node • Java</p>
             </div>
-            <div>
+
+            <div className={styles.highlightCard}>
               <h3>🚀 Projects</h3>
               <p>Real-world applications</p>
             </div>
           </div>
 
-        <div className={styles.grid}>
-          {data.map((item, i) => (
-            <motion.div
-              key={i}
-              className={styles.card}
-              whileHover={{ y: -8 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className={styles.icon}>{item.icon}</div>
-              <h3>{item.title}</h3>
-              <p>{item.desc}</p>
-            </motion.div>
-          ))}
+          {/* RIGHT SIDE (CARDS) */}
+          <div className={styles.right}>
+            {data.map((item, i) => (
+              <motion.div
+                key={i}
+                className={styles.card}
+                whileHover={{ y: -6 }}
+              >
+                <div className={styles.icon}>{item.icon}</div>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+
         </div>
       </motion.div>
     </section>
