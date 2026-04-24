@@ -1,70 +1,153 @@
 .about {
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   background: linear-gradient(135deg, #0e1b24, #121212);
   color: #fff;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Background glow blobs */
+.about::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #00ffcc33, transparent 70%);
+  top: 10%;
+  left: 10%;
+  filter: blur(100px);
+  z-index: 0;
+}
+
+.about::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #00ffff22, transparent 70%);
+  bottom: 10%;
+  right: 10%;
+  filter: blur(120px);
+  z-index: 0;
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 2;
 }
 
 .content h2 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
   color: #00ffcc;
+  letter-spacing: 1.5px;
 }
 
 .intro {
   margin-bottom: 3rem;
+  font-size: 1.1rem;
   color: #cceeee;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
 }
 
-/* GRID LIKE SKILLS */
+/* Grid Layout */
 .cardContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
-/* CARD STYLE (MATCH SKILLS) */
+/* Card Style (Glass + Glow) */
 .card {
-  background: #1a1a1a;
+  position: relative;
   padding: 2rem 1.5rem;
-  border-radius: 16px;
-  box-shadow: 0 0 15px rgba(0, 255, 204, 0.15);
-  transition: all 0.3s ease;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 204, 0.2);
+  overflow: hidden;
+  transition: all 0.4s ease;
 }
 
-/* HOVER GLOW */
+/* Animated gradient border */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #00ffcc, #00ffff, #00ffcc);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Hover glow */
+.card:hover::before {
+  opacity: 1;
+}
+
+/* Hover effect */
 .card:hover {
-  transform: scale(1.08);
-  animation: glow 1s infinite alternate;
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 255, 204, 0.25);
   cursor: pointer;
 }
 
-/* ICON */
+/* Icon */
 .icon {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
   color: #00f0ff;
+  transition: all 0.3s ease;
 }
 
-/* TITLE */
+/* Icon animation */
+.card:hover .icon {
+  transform: rotate(10deg) scale(1.2);
+  color: #00ffff;
+}
+
+/* Title */
 .card h3 {
   margin-bottom: 1rem;
   color: #00ffcc;
+  font-size: 1.4rem;
 }
 
-/* CONTENT */
+/* Content */
 .cardContent {
   font-size: 0.95rem;
   color: #cceeee;
   line-height: 1.6;
 }
 
-/* GLOW EFFECT */
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 10px #00ffff;
+/* Text inside education */
+.cardContent p {
+  margin-bottom: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content h2 {
+    font-size: 2.2rem;
   }
-  100% {
-    box-shadow: 0 0 25px #00ffff;
+
+  .intro {
+    font-size: 1rem;
+  }
+
+  .card {
+    padding: 1.5rem 1rem;
+  }
+
+  .icon {
+    font-size: 2.2rem;
   }
 }
