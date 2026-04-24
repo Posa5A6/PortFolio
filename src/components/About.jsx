@@ -49,7 +49,7 @@ const About = () => {
 
             <div className={styles.highlightCard}>
               <h3>💻 Full Stack</h3>
-              <p>React • Node • Java</p>
+              <p>React • python • django</p>
             </div>
 
             <div className={styles.highlightCard}>
