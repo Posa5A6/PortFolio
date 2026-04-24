@@ -5,20 +5,20 @@
   text-align: center;
 }
 
-/* Container */
+/* container */
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
 }
 
-/* Title */
+/* title */
 h2 {
   font-size: 2.5rem;
   color: #00ffcc;
   margin-bottom: 1rem;
 }
 
-/* Intro */
+/* intro */
 .intro {
   max-width: 600px;
   margin: 0 auto 3rem;
@@ -26,51 +26,90 @@ h2 {
   line-height: 1.6;
 }
 
-/* GRID FIX (IMPORTANT) */
-.grid {
+/* SPLIT LAYOUT */
+.wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  align-items: start;
 }
 
-/* CARD */
-.card {
+/* LEFT SIDE */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* highlight cards */
+.highlightCard {
   background: #161b22;
-  padding: 1.8rem;
+  padding: 1.5rem;
   border-radius: 12px;
   border: 1px solid #21262d;
-  transition: all 0.3s ease;
+  text-align: left;
+  transition: 0.3s;
 }
 
-/* CLEAN HOVER */
+.highlightCard:hover {
+  border-color: #00ffcc;
+  transform: translateY(-5px);
+}
+
+.highlightCard h3 {
+  color: #00ffcc;
+  margin-bottom: 0.3rem;
+}
+
+.highlightCard p {
+  color: #8b949e;
+  font-size: 0.9rem;
+}
+
+/* RIGHT SIDE */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* cards */
+.card {
+  background: #161b22;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #21262d;
+  text-align: left;
+  transition: 0.3s;
+}
+
 .card:hover {
   border-color: #00ffcc;
-  transform: translateY(-6px);
+  transform: translateX(6px);
 }
 
-/* ICON */
+/* icon */
 .icon {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #00d9ff;
-  margin-bottom: 0.8rem;
-}
-
-/* TITLE */
-.card h3 {
-  color: #00ffcc;
   margin-bottom: 0.5rem;
 }
 
-/* TEXT */
+/* text */
+.card h3 {
+  color: #00ffcc;
+  margin-bottom: 0.4rem;
+}
+
 .card p {
-  font-size: 0.95rem;
   color: #c9d1d9;
+  font-size: 0.95rem;
   white-space: pre-line;
 }
 
-/* MOBILE FIX */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .grid {
+  .wrapper {
     grid-template-columns: 1fr;
   }
 }
