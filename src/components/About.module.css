@@ -2,108 +2,75 @@
   padding: 5rem 2rem;
   background: #0d1117;
   color: #fff;
+  text-align: center;
 }
 
-/* Layout */
+/* Container */
 .container {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
 }
 
-/* LEFT SIDE */
-.left h2 {
-  font-size: 2.8rem;
+/* Title */
+h2 {
+  font-size: 2.5rem;
   color: #00ffcc;
   margin-bottom: 1rem;
 }
 
+/* Intro */
 .intro {
-  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 3rem;
   color: #c9d1d9;
-  line-height: 1.7;
-  margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
-/* Highlights */
-.highlights {
-  display: flex;
+/* GRID FIX (IMPORTANT) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
-.highlights div {
-  background: #161b22;
-  padding: 1rem;
-  border-radius: 10px;
-  flex: 1;
-  text-align: center;
-  border: 1px solid rgba(0, 255, 204, 0.1);
-}
-
-.highlights h3 {
-  color: #00ffcc;
-  font-size: 1.2rem;
-}
-
-.highlights p {
-  font-size: 0.9rem;
-  color: #8b949e;
-}
-
-/* RIGHT SIDE */
-.right {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-/* Cards */
+/* CARD */
 .card {
   background: #161b22;
-  padding: 1.5rem;
-  border-radius: 14px;
-  border: 1px solid rgba(0, 255, 204, 0.1);
+  padding: 1.8rem;
+  border-radius: 12px;
+  border: 1px solid #21262d;
   transition: all 0.3s ease;
 }
 
+/* CLEAN HOVER */
 .card:hover {
-  transform: translateX(10px);
   border-color: #00ffcc;
+  transform: translateY(-6px);
 }
 
-/* Icon */
+/* ICON */
 .icon {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #00d9ff;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
-/* Text */
+/* TITLE */
 .card h3 {
   color: #00ffcc;
   margin-bottom: 0.5rem;
 }
 
+/* TEXT */
 .card p {
-  color: #c9d1d9;
   font-size: 0.95rem;
+  color: #c9d1d9;
+  white-space: pre-line;
 }
 
-.card span {
-  font-size: 0.8rem;
-  color: #8b949e;
-}
-
-/* Responsive */
+/* MOBILE FIX */
 @media (max-width: 768px) {
-  .container {
+  .grid {
     grid-template-columns: 1fr;
-  }
-
-  .highlights {
-    flex-direction: column;
   }
 }
