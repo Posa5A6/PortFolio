@@ -36,6 +36,20 @@ const About = () => {
           Hello! I'm <strong>Narendra Posa</strong>, a passionate full stack developer
           focused on building modern and impactful digital experiences.
         </p>
+          <div className={styles.highlights}>
+            <div>
+              <h3>🎓 4+ Years</h3>
+              <p>Learning & Building</p>
+            </div>
+            <div>
+              <h3>💻 Full Stack</h3>
+              <p>React • Node • Java</p>
+            </div>
+            <div>
+              <h3>🚀 Projects</h3>
+              <p>Real-world applications</p>
+            </div>
+          </div>
 
         <div className={styles.grid}>
           {data.map((item, i) => (
